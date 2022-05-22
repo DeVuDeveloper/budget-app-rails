@@ -1,0 +1,237 @@
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background: #5da2d5;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.navbar-fixed {
+  background-color: #5da2d5;
+}
+
+.log {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 50px 18px 50px;
+  width: 100%;
+  margin: 0;
+}
+
+.log button {
+  align-items: center;
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #fff;
+  display: flex;
+  font-family: sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 100px;
+  padding: 9px 11px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.log button:active,
+.log button:hover {
+  outline: 0;
+}
+
+.signup {
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .log button {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
+
+.text {
+  flex: 1 0 auto;
+  background-image: url('https://imgeng.jagran.com/images/2021/feb/bud1612242652112.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+h1.title,
+.footer-copyright a {
+  font-family: 'Architects Daughter', cursive;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #fccd04;
+}
+
+.text h3 {
+  color: #15db95;
+  margin-top: 10px;
+}
+
+.text h4 {
+  color: #15db95;
+}
+
+.welcome .splash {
+  height: 0;
+  padding: 0;
+  border: 130em solid #5b42f3;
+  position: fixed;
+  left: 50%;
+  top: 100%;
+  display: block;
+  box-sizing: initial;
+  overflow: hidden;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards,
+    borderRadius 0.2s 2.3s linear forwards;
+}
+
+.welcome #welcome {
+  background: #00ddeb;
+  width: 56px;
+  height: 56px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  overflow: hidden;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards,
+    moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards,
+    moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
+    materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards,
+    hide 2s 2.9s ease forwards;
+}
+
+.welcome header,
+.welcome a.btn {
+  opacity: 0;
+  animation: moveIn 2s 3.1s ease forwards;
+}
+
+footer {
+  color: #fccd04;
+}
+
+@keyframes init {
+  0% {
+    width: 0;
+    height: 0;
+  }
+
+  100% {
+    width: 56px;
+    height: 56px;
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes puff {
+  0% {
+    top: 100%;
+    height: 0;
+    padding: 0;
+  }
+
+  100% {
+    top: 50%;
+    height: 100%;
+    padding: 0 100%;
+  }
+}
+
+@keyframes borderRadius {
+  0% {
+    border-radius: 50%;
+  }
+
+  100% {
+    border-radius: 0;
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    top: 50%;
+  }
+
+  50% {
+    top: 40%;
+  }
+
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    background: #03495a;
+    top: 100%;
+  }
+
+  50% {
+    top: 40%;
+  }
+
+  100% {
+    top: 50%;
+    background: #d4b651;
+  }
+}
+
+@keyframes materia {
+  0% {
+    background: #c7c6c5;
+  }
+
+  50% {
+    background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+    top: 26px;
+  }
+
+  100% {
+    background: #c5cbe3;
+    width: 100%;
+    height: 64px;
+    border-radius: 0;
+    top: 26px;
+  }
+}
+
+@keyframes moveIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
