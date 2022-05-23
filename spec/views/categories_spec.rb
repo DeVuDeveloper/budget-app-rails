@@ -11,8 +11,8 @@ RSpec.describe 'Test for Category page', type: :feature do
     end
 
     it 'if signed successfully' do
-        expect(page).to have_content('Signed in successfully.')
-      end
+      expect(page).to have_content('Signed in successfully.')
+    end
 
     it 'if can see title' do
       expect(page).to have_content('CATEGORIES')
