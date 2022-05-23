@@ -5,7 +5,7 @@ RSpec.describe 'Payment page', type: :feature do
     before(:each) do
       @user = User.create(name: 'John', email: 'john@gmail.com', password: 'john123', confirmed_at: Time.now)
       @category = Category.create(user: @user, name: 'Transport', icon: 'Transport.jpeg')
-      @payment = Payment.create(user_id: @user, category_id: 53, name: 'No 4564', amount: 114)
+      @payment = Payment.create(user_id: @user, name: 'No 4564', amount: 114)
     end
 
     before(:each) do
