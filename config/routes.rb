@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
-  resources :category_payments
-  resources :payments
-  resources :categories
-  resources :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root 'categories#index'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get 'categories/most_recent_list'
+  get 'categories/most_ancient_list'
+  
+  resources :users, only: [:index, :show] do
+  resources :categories, only: [:index, :new, :create, :destroy] do
+    resources :category_payments
+    resources :payments
+    resources :welcome, only: [:index]
+  end
+ end
 end

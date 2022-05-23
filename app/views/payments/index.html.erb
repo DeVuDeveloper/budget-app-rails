@@ -1,14 +1,39 @@
-<p style="color: green"><%= notice %></p>
+<section class='transactions-wrapper'>
 
-<h1>Payments</h1>
+  <navbar class="navbar2-wrapper">
+   <%= link_to '<i class="fa fa-arrow-left" aria-hidden="true"></i>'.html_safe, root_path, class: 'back'%>
+   <h4>PAYMENTS</h4>
+  </navbar>
 
-<div id="payments">
-  <% @payments.each do |payment| %>
-    <%= render payment %>
-    <p>
-      <%= link_to "Show this payment", payment %>
-    </p>
-  <% end %>
-</div>
+ <div class="transactions-body">
+  
+  <small class="icon-name">
+    <img src="<%= @category.icon %>", class= 'category-icon'>
+    <p><%= @category.name %></p>
+  </small>
 
-<%= link_to "New payment", new_payment_path %>
+  <div>
+  <hr class= "line"></hr>
+    <% @payments.each do |p|%>
+      <small class='single-transaction'>
+        <span class=name-date>
+          <h4 class='transaction-name'>Payment <%= p.payment.name %></h4>
+          <% Time::DATE_FORMATS[:custom_datetime] = "%d.%h.%Y at %H.%M"%>
+          <h6 class="category-date"><%= p.created_at.to_fs(:custom_datetime)  %></h6> 
+        </span>
+          <h4 class='transaction-amount'>$ <%= p.payment.amount %></h4>
+      </small>
+        <hr class= "line"></hr>
+    <%end%>
+      <div class='total-amount'>
+        <h5>TOTAL PAYMENT</h5>
+        <h5>$ <%= @total %></h5>
+      </div>
+    </div>
+  </div>
+
+  <div class='add-transaction'>
+    <%= link_to "Add Transaction", new_user_category_payment_path, class: 'btn-transaction'%>
+  </div>
+
+</section>

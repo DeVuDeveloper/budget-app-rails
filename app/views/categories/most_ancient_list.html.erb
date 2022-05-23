@@ -1,0 +1,61 @@
+<section id="categories" class="container-fluid program">
+
+ <div class="collapse" id="navbarToggleExternalContent">
+  <div class="bg-dark p-2">
+    <button button , class= "logout" ></button>
+  </div>
+</div>
+<nav class="navbar navbar-dark navbar-wrapper p-0 m-0">
+  <div class="container-fluid nav">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <h2>CATEGORIES</h2>
+    <a href="#"><i class="fa fa-fw fa-search right-icon"></i></a>
+  </div>
+ 
+  <div class="recent align-self-end">
+  <%= link_to root_path do %>
+    <p class="home-icon"><i class="fa fa-home" aria-hidden="true"></i></p>
+    <% end %>
+  <li class="">
+    <%= link_to "Most recents", categories_most_recent_list_path, class: "#{current? "active", categories_most_recent_list_path} recent-text"  %>
+    </li>
+  <li class="">
+    <%= link_to "Most ancients", categories_most_ancient_list_path, class: "#{current? "active", categories_most_ancient_list_path} recent-text"  %>
+    </li>
+   </div>
+</nav>
+
+<div class="categories-container">
+ <% @user.most_ancient_categories.each do |category|%>
+
+<div class="category-card">
+
+<div class="icon-title">
+  <small class="category-icon">
+  <img src="<%= category.icon%>", class= 'category-icon'>
+  </small>
+
+  <small class="title-date">
+  
+  <h3 class="category-title"><%= category.name %></h3>
+
+ <% Time::DATE_FORMATS[:custom_datetime] = "%d.%h.%Y at %H.%M"%>
+  <h6 class="category-date"><%= category.created_at.to_fs(:custom_datetime)  %></h6> 
+  </small>
+</div>
+    <small class="amount-trash">
+      <h6 category="category-amount">$ <%= category.total_amount %></h6>
+      <%= button_to '<i class="fa fa-trash trash shadow" aria-hidden="true">
+      </i>'.html_safe, user_category_path(:user_id, category.id), method: :delete, class: 'delete-category' %>
+    </small>
+  </div>
+  <%end%>
+
+    <div class="category-btn">
+      <%= link_to "Add category", new_user_category_path(:user_id), class: 'add-category'%>
+    </div>
+
+  </div>
+</section>
