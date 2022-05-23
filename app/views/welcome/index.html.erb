@@ -6,10 +6,10 @@
     <div class="col s12">
       <ul class="log">
         <li class="left">
-          
+          <%= button_to "Login", new_user_session_path, class: "login" %>
           </li>
           <li class="right">
-           
+           <button><%= link_to "Sign up", new_user_registration_path, class: "signup" %></button>
           </li>
         </ul>
       </div>

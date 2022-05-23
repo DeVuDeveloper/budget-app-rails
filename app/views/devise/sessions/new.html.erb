@@ -1,0 +1,23 @@
+<div class="container-full">
+   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %> 
+  <div class="navbar-sign">
+    <%= link_to '<i class="fa fa-arrow-left" aria-hidden="true"></i>'.html_safe, root_path, class: "back-sign" %>
+    <span class="right-text">LOGIN</span>
+    <%= f.submit "Log in", class: 'submit' %></span>
+    
+  </div>
+
+  <div class="container-small">
+     <div class="field">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", required: true, class: 'input-field' %>
+      </div>
+
+      <div class="field">
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", required: true, class: 'input-field' %>
+      </div>
+    <% end %>
+    <small class="shared-link">
+    <%= render "devise/shared/links", class:"forgot-password" %>
+    </small>
+  </div>
+</div>

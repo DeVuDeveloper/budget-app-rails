@@ -6,7 +6,7 @@
       <h3>Create new Payment</h3>
       <p>Fill in the data below.</p>
       
-    <%= form_with model: @entity, url:   user_category_category_payments_path do |form|%>
+    <%= form_with model: @payments, url: user_category_category_payments_path do |form|%>
     <div class="col">
       <%= form.label :name, 'Name', class: 'pb-0' %>
       <%= form.text_field :name, class: 'form-control mb-2' %>
