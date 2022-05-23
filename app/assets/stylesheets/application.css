@@ -156,3 +156,28 @@ a:-webkit-any-link {
 .recent-text {
   color: rgb(245, 238, 238);
 }
+
+.shared-link a {
+  display: flex;
+  justify-content: center;
+  color: rgb(75, 73, 73);
+  margin-top: 15px;
+}
+
+.card-body1 {
+  width: 300px;
+  height: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  position: relative;
+  top: 20vh;
+  margin: auto;
+}
+
+.card-title {
+  font-weight: 300;
+}
+
+.btn {
+  font-size: 13px;
+}

@@ -16,5 +16,8 @@
         <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", required: true, class: 'input-field' %>
       </div>
     <% end %>
+    <small class="shared-link">
+    <%= render "devise/shared/links", class:"forgot-password" %>
+    </small>
   </div>
 </div>
