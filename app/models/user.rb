@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :payments, dependent: :destroy
 
   validates :name, presence: true
-  
+
   def most_recent_categories
     categories.order(created_at: :desc).limit(3)
   end
