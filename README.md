@@ -3,7 +3,7 @@
 # Budget App
  
 ## Live preview
-  ## Heroku [link]()
+  ## Heroku [link](dejan-v-budget)
 
 ##  Video
 
