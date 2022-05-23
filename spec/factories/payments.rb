@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :payment do
-    name { "MyString" }
+    name { 'MyString' }
     amount { 1 }
   end
 end

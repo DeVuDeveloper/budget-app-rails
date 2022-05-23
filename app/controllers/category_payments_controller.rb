@@ -1,5 +1,5 @@
 class CategoryPaymentsController < ApplicationController
-  before_action :set_category_payment, only: %i[ show edit update destroy ]
+  before_action :set_category_payment, only: %i[show edit update destroy]
 
   # GET /category_payments or /category_payments.json
   def index
@@ -7,8 +7,7 @@ class CategoryPaymentsController < ApplicationController
   end
 
   # GET /category_payments/1 or /category_payments/1.json
-  def show
-  end
+  def show; end
 
   # GET /category_payments/new
   def new
@@ -16,8 +15,7 @@ class CategoryPaymentsController < ApplicationController
   end
 
   # GET /category_payments/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /category_payments or /category_payments.json
   def create
@@ -25,7 +23,9 @@ class CategoryPaymentsController < ApplicationController
 
     respond_to do |format|
       if @category_payment.save
-        format.html { redirect_to category_payment_url(@category_payment), notice: "Category payment was successfully created." }
+        format.html do
+          redirect_to category_payment_url(@category_payment), notice: 'Category payment was successfully created.'
+        end
         format.json { render :show, status: :created, location: @category_payment }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,9 @@ class CategoryPaymentsController < ApplicationController
   def update
     respond_to do |format|
       if @category_payment.update(category_payment_params)
-        format.html { redirect_to category_payment_url(@category_payment), notice: "Category payment was successfully updated." }
+        format.html do
+          redirect_to category_payment_url(@category_payment), notice: 'Category payment was successfully updated.'
+        end
         format.json { render :show, status: :ok, location: @category_payment }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +54,20 @@ class CategoryPaymentsController < ApplicationController
     @category_payment.destroy
 
     respond_to do |format|
-      format.html { redirect_to category_payments_url, notice: "Category payment was successfully destroyed." }
+      format.html { redirect_to category_payments_url, notice: 'Category payment was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_category_payment
-      @category_payment = CategoryPayment.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def category_payment_params
-      params.fetch(:category_payment, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_category_payment
+    @category_payment = CategoryPayment.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def category_payment_params
+    params.fetch(:category_payment, {})
+  end
 end
