@@ -10,6 +10,16 @@ class CategoriesController < ApplicationController
   # GET /categories/1 or /categories/1.json
   def show; end
 
+  def most_recent_list
+    @user = current_user
+    @categories = Category.all
+  end
+
+  def most_ancient_list
+    @user = current_user
+    @categories = Category.all
+  end
+
   # GET /categories/new
   def new
     @user = current_user

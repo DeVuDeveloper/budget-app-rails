@@ -15,7 +15,15 @@
     <h2>CATEGORIES</h2>
     <i class="fa fa-search" aria-hidden="true"></i>
     </div>
+    <div class="recent align-self-end">
+  
+    <%= link_to "Most recents", categories_most_recent_list_path, class: "#{current? "active", categories_most_recent_list_path} recent-text"  %>
+    
+    <%= link_to "Most ancients", categories_most_ancient_list_path, class: "#{current? "active", categories_most_ancient_list_path} recent-text"  %>
+    
+  </div>
 </nav>
+
   <div class="categories-container">
     <% @categories.each do |category|%>
   <div class="category-card">

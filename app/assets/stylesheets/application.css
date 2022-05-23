@@ -32,3 +32,27 @@ a:-webkit-any-link {
   text-decoration: none;
   cursor: pointer;
 }
+
+.active {
+  color: rgb(211, 1, 1);
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.active::before {
+  transform: translateX(-50%);
+  border-radius: 100%;
+  position: absolute;
+  background: #fff;
+  bottom: -2px;
+  height: 5px;
+  content: '';
+  width: 5px;
+  left: 50%;
+}
+
+.recent-text {
+  color: rgb(245, 238, 238);
+}
