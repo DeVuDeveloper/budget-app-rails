@@ -1,0 +1,35 @@
+<div class="form-body">
+ <%= link_to '<i class="fa fa-arrow-left" aria-hidden="true"></i>'.html_safe, root_path, class: 'back-form'%>
+  <div class="row">
+    <div class="form-holder">
+      <div class="form-content">
+          <div class="form-items">
+            <h3>Create new Category</h3>
+            <p>Fill in the data below.</p>
+            <%= form_with model: @category, url: user_categories_path(user_id: @user.id), class: "requires-validation" do |form|%>
+          <div class="col mb-0">
+            <%= form.label :name, 'Name', class: 'mb-0' %>
+            <%= form.text_field :name, class:"form-control" %>
+              <div class="valid-feedback">Name field is valid!</div>
+              <div class="invalid-feedback">Name field cannot be blank!</div>
+          </div>
+          <div class="col">
+            <%= form.label :icon, 'Icon' , class: 'pb-2 pt-2' %>
+            <%= form.url_field :icon, class: "form-control"%>
+            <div class="valid-feedback">Username field is valid!</div>
+            <div class="invalid-feedback">Username field cannot be blank!</div>
+          </div>
+        <div class="form-check">
+          <input class="form-check-input mt-2" type="checkbox" value="" id="invalidCheck" required>
+          <label class="form-check-label pt-1">I confirm that all data are correct</label>
+        <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
+      </div>
+        <div class="form-button mt-3">
+          <button id="submit" type="submit" class="btn btn-primary">Add Category</button>
+            </div>
+          <%end%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

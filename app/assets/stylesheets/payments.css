@@ -1,0 +1,86 @@
+.transactions-wrapper {
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(241, 235, 235);
+}
+
+.navbar2-wrapper {
+  display: flex;
+  background: #3778c2;
+  color: #fff;
+  padding: 18px;
+}
+
+.nav2 {
+  color: white;
+  padding: 20px 0;
+}
+
+.back {
+  margin-left: 10px;
+  color: #fff;
+}
+
+.navbar2-wrapper h4 {
+  margin: auto;
+  padding-right: 20px;
+  font-size: 17px;
+}
+
+.icon-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 21px;
+  color: #6e7780;
+  padding: 10px;
+}
+
+.transactions-body {
+  margin: 10px;
+  background-color: #fff;
+}
+
+.single-transaction {
+  display: flex;
+  justify-content: space-between;
+  color: #3e596d;
+  padding: 17px;
+}
+
+.single-transaction h4 {
+  color: #6e7780;
+  font-size: 19px;
+}
+
+.line {
+  margin: 0 10px;
+}
+
+.total-amount {
+  display: flex;
+  justify-content: space-between;
+  color: #6e7780;
+  padding: 17px;
+}
+
+.add-transaction {
+  background-color: #5fb523;
+  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.btn-transaction {
+  color: rgb(228, 220, 220);
+  text-decoration: none;
+  padding: 10px 110px;
+  border: 1px solid rgb(228, 220, 220);
+}
+
+.btn-transaction:hover {
+  color: rgb(187, 179, 179);
+}

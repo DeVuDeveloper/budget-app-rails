@@ -1,0 +1,31 @@
+<section class="welcome wrapper">
+  <span id="splash-overlay" class="splash"></span>
+  <span id="welcome" class="z-depth-4"></span>
+ 
+  <header class="navbar-fixed"> 
+    <div class="col s12">
+      <ul class="log">
+        <li class="left">
+          <%= button_to "Login", new_user_session_path, class: "login" %>
+          </li>
+          <li class="right">
+           <button><%= link_to "Sign up", new_user_registration_path, class: "signup" %></button>
+          </li>
+        </ul>
+      </div>
+  </header>
+
+ <div class="text">
+    <h3 class="text-center">Welcome to</h3>
+    <h1 class="title text-center">Budget</h1>
+    <h4 class="text-center">Place to track your transactions</h4>
+  </div>
+
+  <footer class="page-footer deep-purple darken-3">
+    <div class="footer-copyright deep-purple darken-4">
+      <div class="container text-center">
+       &copy; 2022 Dejan
+      </div>
+    </div>
+  </footer>
+</section>

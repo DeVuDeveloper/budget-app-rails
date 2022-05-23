@@ -13,3 +13,176 @@
  *= require_tree .
  *= require_self
  */
+
+*,
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #e5e9ee;
+  overflow: hidden;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.form-page {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(245, 245, 245);
+}
+
+.form-container {
+  padding: 1rem;
+  background-color: rgb(255, 255, 255);
+  width: 75vw;
+  border-radius: 10px;
+  box-shadow: 2px 2px 3px rgb(206, 206, 206);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+}
+
+.input {
+  width: 96%;
+  padding: 5px;
+  border: 1px solid rgb(201, 201, 201);
+  font-size: 18px;
+}
+
+.links {
+  text-decoration: none;
+}
+
+.create-btn {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  color: white;
+  background-color: rgb(24, 161, 240);
+  border: none;
+  box-shadow: 2px 2px 3px rgb(206, 206, 206);
+  border-radius: 5px;
+  padding: 6px 15px 6px 15px;
+  margin: 5px 0 5px 0;
+}
+
+.form_next {
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar-sign {
+  background-color: #3778c2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  padding: 1rem 1rem;
+  margin-bottom: 2rem;
+}
+
+.back-sign {
+  color: #fff;
+}
+
+.input-field {
+  width: 100%;
+  outline: none;
+  border: none;
+  height: 2.8rem;
+  padding-left: 20px;
+}
+
+.select {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 0.5rem;
+  padding: 1rem 0;
+  padding-left: 4px;
+  background-color: #fff;
+}
+
+.input-select {
+  width: 100%;
+  padding-left: 1rem;
+}
+
+.submit {
+  background: transparent;
+  color: #fff;
+  border: none;
+}
+
+.submit:hover {
+  font-size: 19px;
+}
+
+.active {
+  color: rgb(211, 1, 1);
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.active::before {
+  transform: translateX(-50%);
+  border-radius: 100%;
+  position: absolute;
+  background: #fff;
+  bottom: -2px;
+  height: 5px;
+  content: '';
+  width: 5px;
+  left: 50%;
+}
+
+.recent-text {
+  color: rgb(245, 238, 238);
+}
+
+.shared-link a {
+  display: flex;
+  justify-content: center;
+  color: rgb(75, 73, 73);
+  margin-top: 15px;
+}
+
+.card-body1 {
+  width: 300px;
+  height: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  position: relative;
+  top: 20vh;
+  margin: auto;
+}
+
+.card-title {
+  font-weight: 300;
+}
+
+.btn {
+  font-size: 13px;
+}
+
+.back-form {
+  color: rgb(14, 48, 53);
+  padding-left: 20px;
+}
