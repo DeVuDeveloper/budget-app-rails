@@ -32,8 +32,10 @@
     <img src="<%= category.icon%>", class= 'category-icon'>
   </small>
 <small class="title-date">
-  <h3 class="category-title"><%= category.name %></h3>
-<% Time::DATE_FORMATS[:custom_datetime] = "%d.%h.%Y at %H.%M"%>
+  <%= link_to user_category_payments_path(@user.id, category.id), remote: :true, class: "link-category fix2 col-3 my-3 col-md-12 col-lg-12 col-xl-12m-0 text-center lato m-0 p-0 text-center" do %>
+    <h3 class="category-title"><%= category.name %></h3>
+  <%end%>
+    <% Time::DATE_FORMATS[:custom_datetime] = "%d.%h.%Y at %H.%M"%>
   <h6 class="category-date"><%= category.created_at.to_fs(:custom_datetime)  %></h6> 
   </small>
 </div>
