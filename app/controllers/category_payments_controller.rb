@@ -25,9 +25,9 @@ class CategoryPaymentsController < ApplicationController
     arr = params[:categoryId]
     return unless @payment.save
 
-    arr.each do |category_id|
+    arr.each do |id|
       association = CategoryPayment.new
-      association.category = Category.find(category_id)
+      association.category = Category.find(id)
       association.payment = Payment.find(@payment.id)
       association.save
     end

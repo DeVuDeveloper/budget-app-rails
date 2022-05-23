@@ -1,0 +1,29 @@
+<div class="card-body1">
+		<h3 class="card-title text-center">Change password</h3>
+		<div class="card-text">
+			<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Hi user!</strong> You should check in on some of those fields below.
+  
+</div>
+<div class="form">
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= f.hidden_field :reset_password_token %>
+			<div class="form-group">
+    <%= f.label :password, "New password" %><br />
+    <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+    <% end %>
+    <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class:"form-control form-control-sm"%>
+  </div>
+		<div class="form-group">
+    <%= f.label :password_confirmation, "Confirm new password" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control form-control-sm" %>
+  </div>
+				
+        <%= f.submit "Reset password ", class:"btn btn-sl btn-primary mt-2 btn-block btnForget"  %>
+		 </div>
+     <% end %>
+      <%= link_to "Back", :back, class: "btn btn-sl btn-dark mt-2 btn-block btnForget"%>
+     </div>
+</div

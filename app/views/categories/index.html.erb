@@ -2,7 +2,7 @@
 
  <div class="collapse" id="navbarToggleExternalContent">
   <div class="bg-dark p-2">
-    <button button , class= "logout" ></button>
+    <%= button_to "Logout", destroy_user_session_path, method: :delete , class: "logout" %>
   </div>
 </div>
 <nav class="navbar navbar-dark navbar-wrapper p-0 m-0">
