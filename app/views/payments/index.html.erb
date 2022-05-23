@@ -14,14 +14,14 @@
 
   <div>
   <hr class= "line"></hr>
-    <% @payments.each do |e|%>
+    <% @payments.each do |p|%>
       <small class='single-transaction'>
         <span class=name-date>
-          <h4 class='transaction-name'>Payment <%= e.payment.name %></h4>
+          <h4 class='transaction-name'>Payment <%= p.payment.name %></h4>
           <% Time::DATE_FORMATS[:custom_datetime] = "%d.%h.%Y at %H.%M"%>
-          <h6 class="category-date"><%= e.created_at.to_fs(:custom_datetime)  %></h6> 
+          <h6 class="category-date"><%= p.created_at.to_fs(:custom_datetime)  %></h6> 
         </span>
-          <h4 class='transaction-amount'>$ <%= e.payment.amount %></h4>
+          <h4 class='transaction-amount'>$ <%= p.payment.amount %></h4>
       </small>
         <hr class= "line"></hr>
     <%end%>

@@ -2,9 +2,7 @@ class CategoryPaymentsController < ApplicationController
   before_action :set_category_payment, only: %i[show edit update destroy]
 
   # GET /category_payments or /category_payments.json
-  def index
-    @category_payments = CategoryPayment.all
-  end
+  def index; end
 
   # GET /category_payments/1 or /category_payments/1.json
   def show; end
@@ -19,22 +17,25 @@ class CategoryPaymentsController < ApplicationController
 
   # POST /category_payments or /category_payments.json
   def create
-    @category_payment = CategoryPayment.new(category_payment_params)
     @payment = Payment.new
     @user = current_user
     @payment.user_id = current_user.id
     @payment.name = params[:name]
     @payment.amount = params[:amount]
+    arr = params[:categoryId]
+    return unless @payment.save
 
+    arr.each do |category_id|
+      association = CategoryPayment.new
+      association.category = Category.find(category_id)
+      association.payment = Payment.find(@payment.id)
+      association.save
+    end
     respond_to do |format|
-      if @category_payment.save
-        format.html do
-          redirect_to category_payment_url(@category_payment), notice: 'Category payment was successfully created.'
-        end
-        format.json { render :show, status: :created, location: @category_payment }
+      if @payment.save
+        format.html { redirect_to root_path, notice: 'Payment was successfully created.' }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @category_payment.errors, status: :unprocessable_entity }
       end
     end
   end

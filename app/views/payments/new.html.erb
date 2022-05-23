@@ -1,0 +1,46 @@
+<div class="form-body">
+    <div class="row">
+      <div class="form-holder">
+  <div class="form-content">
+      <div class="form-items">
+      <h3>Create new Payment</h3>
+      <p>Fill in the data below.</p>
+      
+    <%= form_with model: @entity, url:   user_category_category_payments_path do |form|%>
+    <div class="col">
+      <%= form.label :name, 'Name', class: 'pb-0' %>
+      <%= form.text_field :name, class: 'form-control mb-2' %>
+    
+        <div class="valid-feedback">Name field is valid!</div>
+         <div class="invalid-feedback">Name field cannot be blank!</div>
+      </div>
+
+    <div class="col">
+      <%= form.label :amount, 'Amount($)' %>
+      <%= form.number_field :amount, class: 'form-control mt-2' %>
+    <div class="valid-feedback">Username field is valid!</div>
+    <div class="invalid-feedback">Username field cannot be blank!</div>
+    </div>
+
+    <div class="col">
+      <%= form.label :name, 'Choose Category', class: 'mt-2' %>
+      <%= form.select 'categoryId[]', @categories.collect {|category| [category.name, category.id]},{ include_blank: true} , class:"form-select" %><br>
+      <div class="valid-feedback">Category field is valid!</div>
+      <div class="invalid-feedback">Category field cannot be blank!</div>
+    </div>
+      
+      <div class="form-check">
+       <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+       <label class="form-check-label">I confirm that all data are correct</label>
+      <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
+    </div>
+
+    <div class="form-button mt-3">
+      <button id="submit" type="submit" class="btn btn-primary">Add Payment</button>
+    </div>
+        <%end%>
+       </div>
+      </div>
+    </div>
+  </div>
+</div>

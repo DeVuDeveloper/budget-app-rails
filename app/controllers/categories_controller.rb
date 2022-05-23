@@ -5,6 +5,8 @@ class CategoriesController < ApplicationController
   def index
     @user = current_user
     @categories = Category.where(user_id: @user.id).order(updated_at: :desc)
+    @payments = Payment.all
+    @total = 0
   end
 
   # GET /categories/1 or /categories/1.json
