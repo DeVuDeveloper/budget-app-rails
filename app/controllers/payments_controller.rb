@@ -3,7 +3,9 @@ class PaymentsController < ApplicationController
 
   # GET /payments or /payments.json
   def index
-    @payments = Payment.all
+    @category = Category.find(params[:category_id])
+    @payments = @category.category_payments.order(created_at: :desc)
+    @total = @category.total_amount
   end
 
   # GET /payments/1 or /payments/1.json
@@ -64,6 +66,6 @@ class PaymentsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def payment_params
-    params.require(:payment).permit(:name, :amount)
+    params.require(:payment).permit(:user_id, :name, :amount, :category_id)
   end
 end

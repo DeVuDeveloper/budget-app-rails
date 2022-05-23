@@ -20,6 +20,11 @@ class CategoryPaymentsController < ApplicationController
   # POST /category_payments or /category_payments.json
   def create
     @category_payment = CategoryPayment.new(category_payment_params)
+    @payment = Payment.new
+    @user = current_user
+    @payment.user_id = current_user.id
+    @payment.name = params[:name]
+    @payment.amount = params[:amount]
 
     respond_to do |format|
       if @category_payment.save
