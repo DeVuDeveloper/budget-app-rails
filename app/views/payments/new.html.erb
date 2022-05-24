@@ -25,7 +25,8 @@
 
     <div class="col">
       <%= form.label :name, 'Choose Category', class: 'mt-2' %>
-      <%= form.select 'categoryId[]', @categories.collect {|category| [category.name, category.id]},{ include_blank: true} , class:"form-select" %><br>
+      <%= form.select 'categoryId[]',@categories.collect {|category| [category.name, category.id]}, class:"form-select", value: 'category' %><br>
+      <option hidden>Category</option>
       <div class="valid-feedback">Category field is valid!</div>
       <div class="invalid-feedback">Category field cannot be blank!</div>
     </div>
