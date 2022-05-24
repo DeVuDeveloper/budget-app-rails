@@ -186,3 +186,12 @@ a:-webkit-any-link {
   color: rgb(14, 48, 53);
   padding-left: 20px;
 }
+
+.notification {
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.notification.fade {
+  opacity: 0;
+}

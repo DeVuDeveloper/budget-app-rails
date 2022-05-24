@@ -17,12 +17,14 @@
 
   <body>
 
+  <div class="notification">
   <% if notice %>
-      <h6 class="alert alert-success text-center msg"><%= flash[:notice]%></h6>
+      <h6 class="alert alert-success text-center msg notification"><%= flash.now[:notice] %></h6>
     <% end %>
     <% if alert %>
-      <p class="alert alert-danger text-center msg"><%= alert %></p>
+      <p class="alert alert-danger text-center msg notification"><%= alert %></p>
   <% end %>
+  </div>
 
 <%= yield %>
 
