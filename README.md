@@ -3,7 +3,7 @@
 # Budget App
  
 ## Live preview
-  ## Heroku [link](https://dejab-v-budget.herokuapp.com/)
+  ## Heroku [link](https://dejan-vu-budget.herokuapp.com/)
 
 ##  Video
 
