@@ -1,5 +1,3 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
-
 # Budget App
  
 ## Live preview
@@ -58,10 +56,6 @@ Feel free to check the [issues page](https://github.com/VuDej/School-Library-Rub
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-A special thanks to [Gregoire Vella on Behance](https://www.behance.net/gregoirevella) as author of design.
 
 ## 📝 License
 
